@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QPM-El-oku">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Screen View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MainScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainScreenViewController" customModule="themovieapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U95-5J-oeE" customClass="PagingTableView" customModule="PagingTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="A0m-n8-rAY" id="IpR-kx-5Kk"/>
+                                    <outlet property="delegate" destination="A0m-n8-rAY" id="q2y-Ym-z9K"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="U95-5J-oeE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1dk-jK-Bhk"/>
+                            <constraint firstItem="U95-5J-oeE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="g9w-9a-1Wi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U95-5J-oeE" secondAttribute="trailing" id="rIC-eg-9AQ"/>
+                            <constraint firstAttribute="bottom" secondItem="U95-5J-oeE" secondAttribute="bottom" id="xX6-7k-haG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eO8-rv-KLX"/>
+                    <connections>
+                        <outlet property="mainScreenViewModel" destination="A0m-n8-rAY" id="VHY-En-VZv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="A0m-n8-rAY" customClass="MainScreenViewModel" customModule="themovieapp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="moviesListTableView" destination="U95-5J-oeE" id="Bhk-0P-QXc"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="257.97101449275362" y="240.40178571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zEl-rx-RC0">
+            <objects>
+                <navigationController id="QPM-El-oku" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5f6-uN-oQ3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="a4w-x2-MjM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aXQ-nC-xRL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="260" y="-479"/>
+        </scene>
+        <!--Detail Screen View Controller-->
+        <scene sceneID="6Vc-tY-pm0">
+            <objects>
+                <viewController storyboardIdentifier="DetailScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="329-tb-c4B" customClass="DetailScreenViewController" customModule="themovieapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CPV-NY-mHW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aTo-hL-BHn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <viewLayoutGuide key="safeArea" id="fRe-ED-dvR"/>
+                                <connections>
+                                    <outlet property="delegate" destination="zD4-fe-h85" id="6yw-Jd-dIS"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gMx-sb-cGT"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aTo-hL-BHn" firstAttribute="leading" secondItem="gMx-sb-cGT" secondAttribute="leading" id="NDn-Ha-Ijl"/>
+                            <constraint firstAttribute="bottom" secondItem="aTo-hL-BHn" secondAttribute="bottom" id="akR-q6-sTi"/>
+                            <constraint firstItem="aTo-hL-BHn" firstAttribute="top" secondItem="CPV-NY-mHW" secondAttribute="top" id="g1o-md-l1N"/>
+                            <constraint firstItem="aTo-hL-BHn" firstAttribute="trailing" secondItem="gMx-sb-cGT" secondAttribute="trailing" id="uNj-pe-jid"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailViewModel" destination="zD4-fe-h85" id="tJD-Ba-Dbq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rwn-eo-DmK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="zD4-fe-h85" customClass="DetailScreenViewModel" customModule="themovieapp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="detailScrollView" destination="aTo-hL-BHn" id="JRY-tm-kT6"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1057.9710144927537" y="239.73214285714283"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

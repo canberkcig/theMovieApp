@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="moviesListHeader" rowHeight="453" id="KGk-i7-Jjw" customClass="MoviesListHeaderTableViewCell" customModule="themovieapp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="560" height="453"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="560" height="453"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOd-Xr-pHs">
+                        <rect key="frame" x="0.0" y="0.0" width="560" height="453"/>
+                        <subviews>
+                            <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mfY-Aw-m6b">
+                                <rect key="frame" x="0.0" y="0.0" width="559" height="458"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="rbQ-pF-3aO">
+                                        <rect key="frame" x="0.0" y="413" width="560" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="KkK-Ji-AuS"/>
+                                        </constraints>
+                                    </pageControl>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="cMZ-4m-D5P"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="xIw-by-TiB" firstAttribute="bottom" secondItem="rbQ-pF-3aO" secondAttribute="bottom" constant="15" id="4Kq-Yx-KFN"/>
+                                    <constraint firstItem="rbQ-pF-3aO" firstAttribute="centerX" secondItem="cMZ-4m-D5P" secondAttribute="centerX" id="P7m-g9-QxB"/>
+                                    <constraint firstItem="rbQ-pF-3aO" firstAttribute="width" secondItem="mfY-Aw-m6b" secondAttribute="width" id="zF2-Gd-app"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="bS5-BB-aUS"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="xIw-by-TiB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="KGk-i7-Jjw" id="1wH-GR-fuX"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mfY-Aw-m6b" firstAttribute="top" secondItem="rOd-Xr-pHs" secondAttribute="top" id="Efj-TN-w2h"/>
+                            <constraint firstItem="mfY-Aw-m6b" firstAttribute="leading" secondItem="rOd-Xr-pHs" secondAttribute="leading" id="IIg-4V-k3e"/>
+                            <constraint firstAttribute="trailing" secondItem="mfY-Aw-m6b" secondAttribute="trailing" id="gTV-vU-Xcf"/>
+                            <constraint firstAttribute="bottom" secondItem="mfY-Aw-m6b" secondAttribute="bottom" id="nii-Kp-y4n"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="rOd-Xr-pHs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="03R-6b-jf0"/>
+                    <constraint firstAttribute="trailing" secondItem="rOd-Xr-pHs" secondAttribute="trailing" id="J9V-t9-LcK"/>
+                    <constraint firstItem="rOd-Xr-pHs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Vwv-vS-ffH"/>
+                    <constraint firstAttribute="bottom" secondItem="rOd-Xr-pHs" secondAttribute="bottom" id="qGZ-pl-wi0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="moviesScrollView" destination="mfY-Aw-m6b" id="Qt2-Wt-ul0"/>
+                <outlet property="pageControl" destination="rbQ-pF-3aO" id="bJ4-hP-Kfe"/>
+            </connections>
+            <point key="canvasLocation" x="40.579710144927539" y="136.27232142857142"/>
+        </tableViewCell>
+    </objects>
+</document>
